@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <button>Open Modal</button>
+    </div>
+    <div class="modal-box">
+      This is my modal box
+      <p class="cross">X</p>
+    </div>
+    <script>
+      var btn = document.querySelector("button");
+      var modalBox = document.querySelector(".modal-box");
+      var cross = document.querySelector(".cross");
+      btn.addEventListener("click", () => {
+        modalBox.style.top = "50%";
+        modalBox.classList.add("no-blur");
+        document.querySelector(".box").style.filter = "blur(1px)";
+      });
+      cross.addEventListener("click", () => {
+        modalBox.style.top = "-50%";
+        document.querySelector(".box").style.filter = "blur(0px)";
+      });
+
+      window.onclick = function (event) {
+        if (event.target == modalBox) {
+          modalBox.style.opacity = "0";
+        }
+      };
+    </script>
+  </body>
+</html>

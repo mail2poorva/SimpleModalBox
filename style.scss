@@ -1,0 +1,41 @@
+body {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, #757f9a, #d7dde8);
+  overflow: hidden;
+}
+
+.box {
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.modal-box {
+  z-index: 20;
+  width: 30%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  left: 50%;
+  filter: blur(0px);
+  top: -50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  align-items: center;
+  background-color: bisque;
+}
+
+.cross {
+  color: red;
+  left: 27%;
+  top: -20%;
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.no-blur {
+  filter: blur(0px);
+}
